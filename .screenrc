@@ -1,0 +1,29 @@
+## set the default shell
+shell	zsh
+
+# screens
+screen -t 0
+screen -t yayoi/product
+screen -t yayoi/local-login
+screen -t yayoi/settle
+screen -t yayoi/product-inc
+screen -t dot-files-github
+screen -t tmp
+
+select yayoi/product
+stuff "cd ~/proj/yayoi/product^M"
+
+select yayoi/local-login
+stuff "cd ~/proj/yayoi/local-login^M"
+
+select yayoi/settle
+stuff "cd ~/proj/yayoi/settle^M"
+
+select yayoi/product-inc
+stuff "cd ~/proj/yayoi/product-inc^M"
+
+select dot-files-github
+stuff "cd ~/dot-files-git^M"
+
+
+

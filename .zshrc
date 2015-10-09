@@ -1,16 +1,19 @@
-export CLICOLOR=1
 
+
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=3000
+
+setopt promptsubst
+
+
+
+export CLICOLOR=1
 
 
 
 # import zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-
-
-
-
-
 
 
 
@@ -22,7 +25,7 @@ zstyle ':completion:*:*:git:*' script ~/.zdot_files/.git-completion.zsh
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
+    # hg root >/dev/null 2>/dev/null && echo '☿' && return
     echo '>'
 }
 
@@ -32,8 +35,8 @@ function virtualenv_info {
 
 # black red green yellow blue magenta cyan white
 
-export PROMPT="%F{magenta}%n%f@%F{yellow}%m%f: %3~ $(prompt_char) "
-export RPS1="%D %T"
+PROMPT="%F{magenta}%n%f@%F{yellow}%m%f: %3~ \$(prompt_char) "
+RPS1="%F{yellow}%D %T%f"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %F{magenta}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
