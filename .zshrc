@@ -1,4 +1,6 @@
 
+export ROO_HOME="${HOME}/Applications/spring-roo-1.3.2.RELEASE"
+PATH="${PATH}:${ROO_HOME}/bin"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
