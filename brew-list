@@ -1,0 +1,15 @@
+autoconf
+autossh
+bash-completion
+docker
+gdbm
+git
+maven
+openssl
+pcre
+pkg-config
+rbenv
+ruby-build
+typesafe-activator
+zsh
+zsh-completions
