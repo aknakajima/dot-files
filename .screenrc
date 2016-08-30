@@ -3,42 +3,21 @@ shell	zsh
 
 # screens
 screen -t 0
-screen -t yayoi/app
-screen -t yayoi/local-login
-screen -t yayoi/settle
-screen -t yayoi/intr
-screen -t yayoi/app-inc
-screen -t yayoi/legacy/vm
-screen -t yayoi/legacy/common
-screen -t sales-tax-api-inc
 screen -t dot-files-github
-screen -t smb-yayoi
+screen -t mustang
+screen -t mustang-sql
+screen -t mustang-web
 
-select yayoi/app
-stuff "cd ~/proj/yayoi/product^M"
-
-select yayoi/local-login
-stuff "cd ~/proj/yayoi/local-login^M"
-
-select yayoi/settle
-stuff "cd ~/proj/yayoi/settle^M"
-
-select yayoi/intr
-stuff "cd ~/proj/yayoi/intr^M"
-
-select yayoi/app-inc
-stuff "cd ~/proj/yayoi/product-inc^M"
-
-select yayoi/legacy/vm
-stuff "cd ~/proj/yayoi/legacy/vm^M"
-
-select yayoi/legacy/common
-stuff "cd ~/proj/yayoi/legacy/common^M"
-
-select sales-tax-api-inc
-stuff "cd ~/proj/yayoi/api2-inc^M"
 
 select dot-files-github
 stuff "cd ~/dot-files-git^M"
 
+select mustang
+stuff "cd ~/proj/mustang^M"
+
+select mustang-sql
+stuff "cd ~/proj/mustang-sql^M"
+
+select mustang-web
+stuff "cd ~/proj/mustang-web^M"
 
