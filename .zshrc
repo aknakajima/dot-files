@@ -21,16 +21,9 @@ export RBENV_ROOT=/usr/local/var/rbenv
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 
-
-# git completion
-zstyle ':completion:*:*:git:*' script ~/.zdot_files/.git-completion.zsh
-. /usr/local/etc/bash_completion.d/git-completion.bash
-
-
-
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    # hg root >/dev/null 2>/dev/null && echo '☿' && return
+    git branch >/dev/null 2&>/dev/null && echo '+' && return
+    # hg root >/dev/null 2&>/dev/null && echo '*' && return
     echo '>'
 }
 
