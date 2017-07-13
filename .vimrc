@@ -1,0 +1,2 @@
+hi Comment ctermfg=lightblue
+

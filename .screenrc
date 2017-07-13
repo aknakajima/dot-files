@@ -4,20 +4,17 @@ shell	zsh
 # screens
 screen -t 0
 screen -t dot-files-github
-screen -t mustang
-screen -t mustang-sql
-screen -t mustang-web
+screen -t medical
+screen -t hhc-stb
 
 
 select dot-files-github
-stuff "cd ~/dot-files-git^M"
+stuff "cd ~/dot-files^M"
 
-select mustang
-stuff "cd ~/proj/mustang^M"
+select medical
+stuff "cd ~/prj/medical^M"
 
-select mustang-sql
-stuff "cd ~/proj/mustang-sql^M"
 
-select mustang-web
-stuff "cd ~/proj/mustang-web^M"
+select hhc-stb
+stuff "cd ~/prj/hhc-stb^M"
 

@@ -1,6 +1,8 @@
 
+export JAVA_HOME='/mnt/c/Applications/Java/jdk1.8.0_131'
+
 export ROO_HOME="${HOME}/Applications/spring-roo-1.3.2.RELEASE"
-PATH="${PATH}:${ROO_HOME}/bin:/usr/local/mysql/bin:${HOME}/Applications/gradle-2.10/bin"
+PATH="${PATH}:"${JAVA_HOME}/bin":${ROO_HOME}/bin:/usr/local/mysql/bin:${HOME}/Applications/gradle-2.10/bin"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
@@ -9,10 +11,9 @@ export SAVEHIST=3000
 setopt share_history
 setopt promptsubst
 
-
+export SCREENDIR=~/dot-files/.screendir
 
 export CLICOLOR=1
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
 
 
 export RBENV_ROOT=/usr/local/var/rbenv
