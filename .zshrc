@@ -1,5 +1,5 @@
 
-export JAVA_HOME='/mnt/c/Applications/Java/jdk1.8.0_131'
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
 
 export ROO_HOME="${HOME}/Applications/spring-roo-1.3.2.RELEASE"
 PATH="${PATH}:"${JAVA_HOME}/bin":${ROO_HOME}/bin:/usr/local/mysql/bin:${HOME}/Applications/gradle-2.10/bin"
@@ -19,7 +19,9 @@ export CLICOLOR=1
 export RBENV_ROOT=/usr/local/var/rbenv
 
 # import zsh completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions /usr/local/Cellar/git/2.13.3/share/zsh/site-functions/ $fpath)
+autoload -U compinit
+compinit -u
 
 
 function prompt_char {
