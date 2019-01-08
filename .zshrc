@@ -1,34 +1,24 @@
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
-
-export ROO_HOME="${HOME}/Applications/spring-roo-1.3.2.RELEASE"
-PATH="${PATH}:"${JAVA_HOME}/bin":${ROO_HOME}/bin:/usr/local/mysql/bin:${HOME}/Applications/gradle-2.10/bin"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=3000
 
 setopt share_history
-setopt promptsubst
+setopt prompt_subst
 
 export SCREENDIR=~/dot-files/.screendir
 
 export CLICOLOR=1
 
+export DYLD_LIBRARY_PATH=`echo /usr/local/Cellar/*/*/lib|perl -ne 's/\s+/:/g;print'`
 
-export RBENV_ROOT=/usr/local/var/rbenv
 
 # import zsh completions
-fpath=(/usr/local/share/zsh-completions /usr/local/Cellar/git/2.13.3/share/zsh/site-functions/ $fpath)
-autoload -U compinit
+fpath=(/usr/share/zsh/5.3/fuctions/ $fpath)
+autoload -Uz compinit vcs_info
 compinit -u
 
-
-function prompt_char {
-    git branch >/dev/null 2&>/dev/null && echo '+' && return
-    # hg root >/dev/null 2&>/dev/null && echo '*' && return
-    echo '>'
-}
 
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
@@ -36,8 +26,13 @@ function virtualenv_info {
 
 # black red green yellow blue magenta cyan white
 
-PROMPT="%F{magenta}%n%f@%F{yellow}%m%f: %3~ \$(prompt_char) "
-RPS1="%F{yellow}%D %T%f"
+# vcs
+zstyle ':vcs_info:*' formats '[%s|%b]'
+zstyle ':vcs_info:*' actionformats '[%s|%b(%F{red}%a%f)]'
+precmd() { vcs_info }
+
+PROMPT="%F{magenta}%n%f@%F{yellow}%m%f: %3~%f > "
+RPS1='${vcs_info_msg_0_} %F{yellow}%D %T%f'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %F{magenta}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
